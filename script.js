@@ -122,8 +122,8 @@ rollNoEl.addEventListener("blur", async () => {
   
   if (result.status === 200 && result.data && result.data.length > 0) {
     const record = result.data[0];
-    
-    fillForm(record.json);
+
+    fillForm(record);
     
     rollNoEl.dataset.rec_no = record.rec_no; 
     
@@ -154,6 +154,7 @@ rollNoEl.addEventListener("blur", async () => {
     fullNameEl.focus();
   }
 });
+
 
 saveBtn.addEventListener("click", async () => {
   if (!validateForm()) return;
